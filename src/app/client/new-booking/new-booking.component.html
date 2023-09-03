@@ -1,0 +1,72 @@
+<div class="p-5">
+    <h2 class="color-primary">{{dataHotel.name}}</h2>
+    <div class="grid" *ngFor="let room of dataHotel.rooms">
+        <div class="col-6" [ngClass]="{'selected-room': selectedRoom.id === room.id}">
+            <p-card
+                class="cursor-pointer"
+                (click)="selectRoom(room.id)">
+                <h3 class="color-secondary">{{room.type}}</h3>
+                <div>{{room.price}}</div>
+            </p-card>
+        </div>
+    </div>
+    <p-card>
+        <h3 class="color-primary">
+            Ingresa tus datos
+        </h3>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Nombre:</label>
+            <br />
+            <input type="text" class="w-full" [(ngModel)]="newBooking.name" pInputText>
+        </div>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Apellidos:</label>
+            <br />
+            <input type="text" class="w-full" [(ngModel)]="newBooking.lastName" pInputText>
+        </div>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Género:</label>
+            <br />
+            <p-dropdown [options]="genders" [(ngModel)]="newBooking.gender" [style]="{'width': '100%'}" placeholder="Selecciona una opción" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Tipo de documento:</label>
+            <br />
+            <p-dropdown [options]="documentTypes" [(ngModel)]="newBooking.documentType" [style]="{'width': '100%'}" placeholder="Selecciona una opción" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Documento:</label>
+            <br />
+            <input type="text" class="w-full" [(ngModel)]="newBooking.document" pInputText>
+        </div>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Correo electrónico:</label>
+            <br />
+            <input type="text" class="w-full" [(ngModel)]="newBooking.email" pInputText>
+        </div>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Teléfono:</label>
+            <br />
+            <input type="text" class="w-full" [(ngModel)]="newBooking.phone" pInputText>
+        </div>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Teléfono del contacto de emergencia:</label>
+            <br />
+            <input type="text" class="w-full" [(ngModel)]="newBooking.phoneContact" pInputText>
+        </div>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Nombre del contacto de emergencia:</label>
+            <br />
+            <input type="text" class="w-full" [(ngModel)]="newBooking.nameContact" pInputText>
+        </div>
+        <div class="mt-3">
+            <label class="color-secondary font-bold">Ciudad:</label>
+            <br />
+            <input type="text" class="w-full" [(ngModel)]="newBooking.city" pInputText>
+        </div>
+        <div class="mt-3">
+            <button (click)="setBooking()" pButton class="background-primary">Reservar</button>
+        </div>
+    </p-card>
+</div>
+<p-toast></p-toast>

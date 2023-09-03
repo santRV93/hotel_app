@@ -1,0 +1,37 @@
+html,
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif !important;
+    background-color: #f0f3f4;
+}
+
+select,
+button,
+.p-component,
+.p-inputtext {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.color-primary {
+    color: #02539b;
+}
+
+.color-secondary {
+    color: #7e878e;
+}
+
+.background-primary {
+    background-color: #02539b;
+    border: 1px solid #02539b;
+}
+
+.background-secondary {
+    background-color: #7e878e;
+    border: 1px solid #7e878e;
+}
+
+.container-outlet {
+    margin-left: 205px;
+    margin-right: 32px;
+}

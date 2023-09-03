@@ -1,0 +1,37 @@
+<div class="background-primary menu-container">
+    <div class="user-info">
+        {{userSession.name}}
+        <br/>
+        {{userSession.lastName}}
+    </div>
+    <ul class="menu-ul text-center">
+        <li
+            class="item-separator menu-active"
+            [ngClass]="{ 'disable-item': currentPage !== 'hoteles' }">
+            <a class="cursor-item" (click)="goToPage('hoteles')">
+                <div class="text-menu">
+                    <i class="pi pi-building font-icon"></i>
+                    Hoteles
+                </div>
+            </a>
+        </li>
+        <li
+        class="item-separator menu-active"
+        [ngClass]="{ 'disable-item': currentPage !== 'reservas' }">
+        <a class="cursor-item" (click)="goToPage('reservas')">
+            <div class="text-menu">
+                <i class="pi pi-save font-icon"></i>
+                Reservas
+            </div>
+        </a>
+        </li>
+    </ul>
+    <div class="container-logout text-center">
+        <a (click)="logOut()" class="cursor-item menu-active">
+            <div class="text-menu">
+                <i class="pi pi-power-off font-icon" title="Cerrar sesión"></i>
+            </div>
+        </a>
+    </div>
+</div>
+  

@@ -1,0 +1,78 @@
+<app-header-admin
+    title="Listado de hoteles"></app-header-admin>
+
+<div class="container-outlet">
+    <div class="mt-5">
+        <p-card>
+            <div class="text-right mb-3">
+                <button (click)="goToCreate()" pButton type="button"><i class="pi pi-plus"></i>&nbsp;Nuevo</button>
+            </div>
+            <p-table #dt1 [value]="hotels" dataKey="id"
+            [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
+            [paginator]="true"
+            currentPageReportTemplate="Listando {first} a {last} de {totalRecords} registros">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th scope="col" style="min-width:15rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Nombre
+                                <p-columnFilter type="text" field="name" display="menu"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th scope="col" style="min-width:15rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Ciudad
+                                <p-columnFilter type="text" field="country.name" display="menu"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th scope="col" style="min-width:15rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Dirección
+                                <p-columnFilter type="text" field="hotel.agent" display="menu" ></p-columnFilter>
+                            </div>
+                        </th>
+                        <th scope="col" style="width: 3rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Activo
+                            </div>
+                        </th>
+                        <th scope="col" style="width: 10rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Acciones
+                            </div>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-hotel>
+                    <tr>
+                        <td class="text-center">
+                            {{hotel.name}}
+                        </td>
+                        <td class="text-center">
+                            {{hotel.city}}
+                        </td>
+                        <td class="text-center">
+                            {{hotel.address}}
+                        </td>
+                        <td class="text-center">
+                            {{hotel.active ? 'Si' : 'No'}}
+                        </td>
+                        <td class="text-center">
+                            <button
+                                pButton
+                                class="p-button-outlined p-button-success"
+                                title="Editar"
+                                (click)="goToEdit(hotel.id)"><i class="pi pi-pencil"></i></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="7">Hoteles no encontrados.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-card>
+    </div>
+</div>
+<p-toast></p-toast>

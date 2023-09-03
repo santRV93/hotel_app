@@ -1,0 +1,8 @@
+<p-menubar [model]="items">
+    <ng-template pTemplate="end">
+        <div (click)="logOut()" class="cursor-pointer">
+            <i class="pi pi-power-off"></i>
+            Cerrar sesión
+        </div>
+    </ng-template>
+</p-menubar>

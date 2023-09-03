@@ -1,0 +1,15 @@
+.background-login {
+    background-color: #02539b;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:host ::ng-deep .p-card {
+    width: 550px;
+}
+
+.input-login {
+    width: 100%;
+}

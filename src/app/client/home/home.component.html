@@ -1,0 +1,35 @@
+<div class="p-5">
+    <div class="mb-5">
+        <p-card>
+            <div class="grid">
+                <div class="col-3">
+                    <p-calendar [style]="{'width':'100%'}" dateFormat="dd/mm/yy" [(ngModel)]="dataForm.initDate" placeholder="Fecha de inicio"></p-calendar>
+                </div>
+                <div class="col-3">
+                    <p-calendar [style]="{'width':'100%'}" dateFormat="dd/mm/yy" [(ngModel)]="dataForm.endDate" placeholder="Fecha fin"></p-calendar>
+                </div>
+                <div class="col-3">
+                    <input type="number" class="w-full" min="0" pInputText [(ngModel)]="dataForm.quantity" placeholder="Número de personas">
+                </div>
+                <div class="col-3">
+                    <input type="text" class="w-full" pInputText [(ngModel)]="dataForm.city" placeholder="Ciudad">
+                </div>
+            </div>
+        </p-card>
+    </div>
+    <div class="grid">
+        <p-card *ngFor="let hotel of hotels" class="col-4">
+            <h2>{{hotel.name}}</h2>
+            <div>
+                {{hotel.city}}
+            </div>
+            <div>
+                {{hotel.address}}
+            </div>
+            <div class="mt-3">
+                <button (click)="goToBooking(hotel.id)" pButton class="background-primary">Hacer reserva</button>
+            </div>
+        </p-card>
+    </div>
+</div>
+<p-toast></p-toast>

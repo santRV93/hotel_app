@@ -1,0 +1,30 @@
+.align-header {
+    margin-left: 190px;
+    padding-left: 14px;
+    margin-top: -40px;
+    padding-top: 35px;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+}
+
+.title {
+    margin-top: 40px;
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: 0.055em;
+    margin-bottom: 0px;
+    padding-right: 15px;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #657685;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+:host ::ng-deep .p-dropdown {
+    width: 100%;
+}

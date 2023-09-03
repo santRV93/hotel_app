@@ -1,0 +1,63 @@
+<app-header-admin
+    title="Información de la reserva"
+    [back]="true"
+    (redirect)="goToBooking()"></app-header-admin>
+
+<div class="container-outlet">
+    <div class="mt-5">
+        <p-card class="text-center">
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Nombre:</label>
+                {{dataBooking.name}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Nombre:</label>
+                {{dataBooking.lastName}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Género:</label>
+                {{dataBooking.gender}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Tipo de documento:</label>
+                {{dataBooking.documentType}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Documento:</label>
+                {{dataBooking.document}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Correo:</label>
+                {{dataBooking.email}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Teléfono de contacto:</label>
+                {{dataBooking.phone}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Teléfono del contacto de emergencia:</label>
+                {{dataBooking.phoneContact}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Hotel:</label>
+                {{dataBooking.hotel}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Nombre del contacto de emergencia:</label>
+                {{dataBooking.nameContact}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Destino:</label>
+                {{dataBooking.city}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Fecha de inicio:</label>
+                {{dataBooking.startDate}}
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Fecha final:</label>
+                {{dataBooking.endDate}}
+            </div>
+        </p-card>
+    </div>
+</div>

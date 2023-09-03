@@ -1,0 +1,68 @@
+<app-header-admin
+    [title]="actionTitle"
+    [back]="true"
+    (redirect)="redirectHotels()"></app-header-admin>
+
+<div class="container-outlet">
+    <div class="mt-5">
+        <p-card>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Nombre</label>
+                <br />
+                <input type="text" class="input-form" pInputText [(ngModel)]="newHotel.name">
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Ciudad</label>
+                <br />
+                <input type="text" class="input-form" pInputText [(ngModel)]="newHotel.city">
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Dirección</label>
+                <br />
+                <input type="text" class="input-form" pInputText [(ngModel)]="newHotel.address">
+            </div>
+            <div class="mt-3" *ngIf="action === 'edit' ">
+                <label class="color-secondary font-bold">Activo</label>
+                <br />
+                <p-selectButton [options]="stateOptions" [(ngModel)]="newHotel.active" optionLabel="label" optionValue="value"></p-selectButton>
+            </div>
+            <div class="mt-3">
+                <label class="color-secondary font-bold">Habitaciones</label>
+                <br />
+                <div class="mb-3" *ngFor="let room of newHotel.rooms; let i = index;">
+                    <p-card>
+                        <div class="mt-3">
+                            <label class="color-secondary font-bold">Precio</label>
+                            <br />
+                            <input type="text" class="input-form" pInputText [(ngModel)]="room.price">
+                        </div>
+                        <div class="mt-3">
+                            <label class="color-secondary font-bold">Impuesto</label>
+                            <br />
+                            <input type="text" class="input-form" pInputText [(ngModel)]="room.tax">
+                        </div>
+                        <div class="mt-3">
+                            <label class="color-secondary font-bold">Tipo de habitación</label>
+                            <br />
+                            <input type="text" class="input-form" pInputText [(ngModel)]="room.type">
+                        </div>
+                        <div class="mt-3" *ngIf="action === 'edit'">
+                            <label class="color-secondary font-bold">Activo</label>
+                            <br />
+                            <p-selectButton [options]="stateOptions" [(ngModel)]="room.active" optionLabel="label" optionValue="value"></p-selectButton>
+                        </div>
+                        <div class="mt-3" *ngIf="i > 0 || action === 'edit'">
+                            <button (click)="deleteRoom(i)" pButton class="p-button-outlined p-button-danger">Eliminar</button>
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+            <div class="mt-3">
+                <button *ngIf="action === 'edit'" (click)="editHotel()" pButton class="background-primary mr-3">Editar</button>
+                <button *ngIf="action === 'create'" (click)="saveHotel()" pButton class="background-primary mr-3">Guardar</button>
+                <button (click)="addRoom()" pButton class="p-button-outlined p-button-success">Agregar habitación</button>
+            </div>
+        </p-card>
+    </div>
+</div>
+<p-toast></p-toast>

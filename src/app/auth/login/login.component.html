@@ -1,0 +1,33 @@
+<div class="background-login">
+    <div>
+        <p-card>
+            <h2 class="color-primary text-center">Ingreso a la aplicación</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="mb-4">
+                    <label class="color-secondary font-bold">Usuario</label>
+                    <br/>
+                    <input
+                        type="email"
+                        class="input-login"
+                        formControlName="email"
+                        pInputText
+                        required />
+                </div>
+                <div class="mb-4">
+                    <label class="color-secondary font-bold">Contraseña</label>
+                    <br/>
+                    <input
+                        type="password"
+                        class="input-login"
+                        formControlName="password"
+                        pInputText
+                        required />
+                </div>
+                <div class="text-center">
+                    <button pButton type="submit" class="background-primary" label="Ingresar"></button>
+                </div>
+            </form>
+        </p-card>
+    </div>
+</div>
+<p-toast></p-toast>

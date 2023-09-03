@@ -1,0 +1,68 @@
+.menu-container {
+    width: 190px;
+    overflow: visible;
+    z-index: 100;
+    position: fixed;
+    height: 100%;
+}
+
+.menu-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 35px 0 120px 0;
+    box-sizing: border-box;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 95px;
+}
+
+.logo-profile {
+    position: absolute;
+    z-index: 10;
+    right: 27px;
+    top: 79px;
+}
+
+.font-menu {
+    font-size: 42px;
+}
+
+.text-menu {
+    font-weight: 600;
+}
+
+.font-icon {
+    font-size: 1.2rem;
+}
+
+.item-separator {
+    padding-bottom: 15px;
+}
+
+.container-logout {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+}
+
+.menu-active {
+    color: #ffffff;
+}
+
+.cursor-item {
+    cursor: pointer;
+}
+
+.disable-item {
+    opacity: 0.3;
+}
+
+.user-info {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
